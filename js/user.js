@@ -20,6 +20,7 @@ function renderUsers(obj) {
     elUser.querySelector(".js-user__email").textContent = `${obj.email}`;
     elUser.querySelector(".js-user__phone").href = `tel:${obj.phone}`;
     elUser.querySelector(".js-user__phone").textContent = `${obj.phone}`;
+    elUser.querySelector(".js-btn__post").value= `${obj.id}`;
 
     newFragment.appendChild(elUser);
 }
@@ -38,8 +39,9 @@ function eachUsers(array) {
 
             item.addEventListener("click", ()=>{
                 elPostList.innerHTML = ""
+                elCommitList.innerHTML = ""
                 test();
-                idUser = i+1
+                idUser = item.value
         })
     })
 

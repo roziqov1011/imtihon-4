@@ -8,9 +8,10 @@ const test = function (id) {
     function renderPost(obj) {
         let elPost = elPostTemplate.cloneNode(true);
 
-        elPost.querySelector(".js-post__id").textContent = `${obj.userId}`;
+        elPost.querySelector(".js-post__id").textContent = `${obj.userId} / ${obj.id}`;
         elPost.querySelector(".js-post__title").textContent = `${obj.title}`;
         elPost.querySelector(".js-post__body").textContent = `${obj.body}`;
+        elPost.querySelector(".js-btn__commit").value = obj.id
 
         newPostFragment.appendChild(elPost);
     }
@@ -25,12 +26,13 @@ const test = function (id) {
 
         let elItems = document.querySelectorAll(".js-btn__commit")
 
-        elItems.forEach(function (item, i) {
+        elItems.forEach(function (item) {
 
             item.addEventListener("click", () => {
                 elCommitList.innerHTML = ""
                 test2();
-                idPost = i+1
+                idPost = item.value
+                console.log(item.value);
             })
         })
     }

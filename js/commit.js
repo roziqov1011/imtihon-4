@@ -14,6 +14,7 @@ function renderCommit(obj) {
     elCommit.querySelector(".js-commit__email").href = `${obj.email}`;
     elCommit.querySelector(".js-commit__email").textContent = `${obj.email}`;
     elCommit.querySelector(".js-commit__body").textContent = `${obj.body}`;
+    
 
     newCommitFragment.appendChild(elCommit);
 }
